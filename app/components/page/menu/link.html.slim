@@ -1,0 +1,4 @@
+= link_to(@url, class: "text-gray-700 flex justify-between px-4 py-2 text-sm hover:bg-gray-100", role: "menuitem", tabindex: "-1", **@attributes) do
+  span
+    = icon(name: @icon, weight: :thin, class: "h-5 w-5 fa-fw fa-xl mr-2") if @icon.present?
+    = @name
