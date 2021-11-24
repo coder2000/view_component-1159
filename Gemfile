@@ -28,3 +28,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "view_component", "~> 2.45", reqiure: "view_component/engine"
