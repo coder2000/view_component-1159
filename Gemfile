@@ -34,3 +34,5 @@ gem "view_component", "~> 2.45", require: "view_component/engine"
 gem "importmap-rails", "~> 0.9.1"
 
 gem "cssbundling-rails", "~> 0.2.6"
+
+gem "slim", "~> 4.1"
