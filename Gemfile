@@ -29,4 +29,6 @@ group :development do
 end
 
 
-gem "view_component", "~> 2.45", reqiure: "view_component/engine"
+gem "view_component", "~> 2.45", require: "view_component/engine"
+
+gem "importmap-rails", "~> 0.9.1"
