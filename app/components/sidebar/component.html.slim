@@ -1,0 +1,69 @@
+.fixed.inset-0.z-40.flex.md:hidden role="dialog" aria-modal="true" x-show="sidebarOpen" style="display: none;"
+  .fixed.inset-0.bg-gray-600.bg-opacity-75 {
+    aria-hidden="true"
+    x-show="sidebarOpen"
+    style="display: none;"
+    x-transition:enter="transition-opacity ease-linear duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition-opacity ease-linear duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  }
+
+  .relative.flex.flex-col.flex-1.w-full.max-w-xs.pt-5.pb-4.bg-white {
+    aria-hidden="true"
+    x-show="sidebarOpen"
+    style="display: none;"
+    x-transition:enter="transition ease-in-out duration-300 transform"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in-out duration-300 transform"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+  }
+    .absolute.top-0.right-0.pt-2.-mr-12 {
+      x-show="sidebarOpen"
+      style="display: none;"
+      x-transition:enter="ease-in-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in-out duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    }
+      button.flex.items-center.justify-center.w-10.h-10.ml-1.rounded-full.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-white type="button" @click="sidebarOpen = false"
+        span.sr-only Close sidebar
+        = icon name: "times", class: "fa-xl fa-fw h-6 w-6 text-white"
+
+    .flex.items-center.flex-shrink-0.px-4
+      = image_tag "pumpkin.svg", class: "w-auto h-8", alt: "Example Company"
+    .flex-1.h-0.mt-5.overflow-y-auto
+      nav.px-2.space-y-8
+        .space-y-1
+          = render Sidebar::Link.with_collection @links, classes: @classes, active: @active, inactive: @inactive
+    .flex-shrink-0.flex.border-t.border-gray-200.p-4
+      div
+        .flex.space-x-3.mb-3
+          = link_to "Terms of Service", "/terms", class: "text-xs text-gray-500"
+          = link_to "Privacy Policy", "/privacy", class: "text-xs text-gray-500"
+        p.text-xs.text-gray-400 &copy; Example Company
+
+  .flex-shrink-0.w-14 aria-hidden="true"
+
+.hidden.md:flex.md:w-64.md:flex-col.md:fixed.md:inset-y-0
+  .flex.flex-1.flex-col.min-h-0.bg-white.border-r.border-gray-200
+    .flex-1.flex.flex-col.pt-5.pb-4.overflow-y-auto
+      .flex.items-center.flex-shrink-0.px-4
+        = image_tag "pumpkin.svg", class: "w-auto h-8", alt: "Example Company"
+      .flex.flex-col.flex-1.mt-5
+        nav.flex-1.px-2.pb-4.space-y-8
+          .space-y-1
+            = render Sidebar::Link.with_collection @links, classes: @classes, active: @active, inactive: @inactive
+
+    .flex-shrink-0.flex.border-t.border-gray-200.p-4
+      div
+        .flex.space-x-3.mb-3
+          = link_to "Terms of Service", "/terms", class: "text-xs text-gray-500"
+          = link_to "Privacy Policy", "/privacy", class: "text-xs text-gray-500"
+        p.text-xs.text-gray-400 &copy; Example Company

@@ -1,4 +1,3 @@
 class ApplicationComponent < ViewComponent::Base
-  delegate :current_user, to: :controller
-  delegate :fa_icon, :icon, :nav_link_to, :turbo_frame_tag, :policy, to: :helpers
+  delegate :icon, :nav_link_to, to: :helpers
 end

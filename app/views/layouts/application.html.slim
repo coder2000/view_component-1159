@@ -1,0 +1,20 @@
+doctype html
+
+html.h-full.bg-gray-100
+  head
+    title ViewComponent1159
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application"
+    = javascript_importmap_tags
+
+    script src="https://kit.fontawesome.com/72215fa1b4.js" crossorigin="anonymous"
+
+  body.h-full
+    div x-data="{sidebarOpen: false}"
+      = render Sidebar::Component.new
+      .md:pl-64.flex.flex-col.flex-1
+        = render Searchbar::Component.new
+        main
+          = yield
