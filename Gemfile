@@ -36,3 +36,5 @@ gem "importmap-rails", "~> 0.9.1"
 gem "cssbundling-rails", "~> 0.2.6"
 
 gem "slim", "~> 4.1"
+
+gem "standard", "~> 1.4", :group => :development
